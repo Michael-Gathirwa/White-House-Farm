@@ -1,50 +1,233 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>White House Farm Molo</title>
-  <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Farm — Molo, Nakuru</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" href="images/favicon.png" />
+  <meta name="description" content="My Farm in Molo, Nakuru County — dairy, poultry, fresh produce, tours for schools." />
 </head>
 <body>
+  <!-- Loader -->
+  <div id="loader" aria-hidden="true">
+    <div class="tractor" role="img" aria-label="Loading">🚜</div>
+    <p>Loading farm…</p>
+  </div>
+
+  <!-- Header / Nav -->
   <header class="site-header">
-    <div class="logo">White House Farm</div>
-    <nav class="nav" id="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="animals.html">Animals</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+    <div class="container nav">
+      <a class="brand" href="#hero">🌾 My Farm</a>
+      <nav>
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#animals" data-i18n="nav_animals">Animals</a>
+        <a href="#products" data-i18n="nav_products">Products</a>
+        <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+        <a href="#visits" data-i18n="nav_visits">School Visits</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="actions">
+        <button id="langToggle" class="ghost" aria-label="Switch Language">EN</button>
+        <button id="themeToggle" class="ghost" aria-label="Toggle Dark Mode">☀️</button>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="slider" id="slider">
-        <div class="slide" style="background-image:url('images/farm/hero1.svg')"></div>
-        <div class="slide" style="background-image:url('images/cows/cow1.svg')"></div>
-        <div class="slide" style="background-image:url('images/chickens/chicken1.svg')"></div>
-      </div>
-      <div class="hero-text">
-        <h1>Welcome to our Farm</h1>
-        <p>Home to many cows and happy chickens — a place where nature and care meet.</p>
-        <a class="btn" href="animals.html">Meet the Animals</a>
-      </div>
-    </section>
+  <!-- Hero -->
+  <section id="hero" class="hero" aria-label="Welcome">
+    <div class="hero-media" role="img" aria-label="Farm fields background"></div>
+    <div class="overlay">
+      <h1 data-i18n="hero_title">Welcome to My Farm</h1>
+      <p data-i18n="hero_sub">Fresh • Natural • Sustainable — Molo, Nakuru County</p>
+      <a href="#about" class="btn primary" data-i18n="hero_cta">Start Tour</a>
+    </div>
+  </section>
 
-    <section class="intro">
-      <h2>Featured: Our Cows</h2>
-      <p>We raise a large herd of cows with attention to grazing, health, and comfort.</p>
-    </section>
-  </main>
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 data-i18n="about_title">Our Story</h2>
+      <p class="lead" data-i18n="about_copy">
+        We farm with care — raising healthy animals, growing clean food, and welcoming our community.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="counter" data-target="200">0</span>
+          <p data-i18n="about_cows">Cows</p>
+        </div>
+        <div class="stat">
+          <span class="counter" data-target="500">0</span>
+          <p data-i18n="about_chickens">Chickens</p>
+        </div>
+        <div class="stat">
+          <span class="counter" data-target="50">0</span>
+          <p data-i18n="about_acres">Acres</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animals -->
+  <section id="animals" class="section alt">
+    <div class="container">
+      <h2 data-i18n="animals_title">Meet the Animals</h2>
+      <p class="lead" data-i18n="animals_copy">Tap a card to hear them.</p>
+
+      <div class="grid cards">
+        <article class="card animal" data-sound="sounds/cow.mp3" tabindex="0">
+          <img src="images/cow.jpg" alt="Cows" />
+          <div class="card-body">
+            <h3 data-i18n="animal_cows">Cows</h3>
+            <p data-i18n="animal_cows_copy">Dairy cows — grass-fed, calm, and productive.</p>
+          </div>
+        </article>
+
+        <article class="card animal" data-sound="sounds/chicken.mp3" tabindex="0">
+          <img src="images/chicken.jpg" alt="Chickens" />
+          <div class="card-body">
+            <h3 data-i18n="animal_chickens">Chickens</h3>
+            <p data-i18n="animal_chickens_copy">Free-range hens — fresh eggs daily.</p>
+          </div>
+        </article>
+
+        <article class="card animal" data-sound="sounds/goat.mp3" tabindex="0">
+          <img src="images/goat.jpg" alt="Goats" />
+          <div class="card-body">
+            <h3 data-i18n="animal_goats">Goats</h3>
+            <p data-i18n="animal_goats_copy">Hardy browsers with rich milk.</p>
+          </div>
+        </article>
+
+        <article class="card animal" data-sound="sounds/horse.mp3" tabindex="0">
+          <img src="images/horse.jpg" alt="Horses" />
+          <div class="card-body">
+            <h3 data-i18n="animal_horses">Horses</h3>
+            <p data-i18n="animal_horses_copy">Gentle giants around the farm.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section">
+    <div class="container">
+      <h2 data-i18n="products_title">Farm Fresh Products</h2>
+      <p class="lead" data-i18n="products_copy">Pure, local, and responsibly produced.</p>
+
+      <div class="grid products">
+        <div class="product">
+          <img src="images/milk.jpg" alt="Milk" />
+          <h4 data-i18n="prod_milk">Fresh Milk</h4>
+        </div>
+        <div class="product">
+          <img src="images/eggs.jpg" alt="Eggs" />
+          <h4 data-i18n="prod_eggs">Free-range Eggs</h4>
+        </div>
+        <div class="product">
+          <img src="images/cheese.jpg" alt="Cheese" />
+          <h4 data-i18n="prod_cheese">Handmade Cheese</h4>
+        </div>
+        <div class="product">
+          <img src="images/honey.jpg" alt="Honey" />
+          <h4 data-i18n="prod_honey">Raw Honey</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section alt">
+    <div class="container">
+      <h2 data-i18n="gallery_title">Gallery</h2>
+      <p class="lead" data-i18n="gallery_copy">Hover to zoom.</p>
+
+      <div class="masonry">
+        <img src="images/gallery1.jpg" alt="Field" />
+        <img src="images/gallery2.jpg" alt="Barn" />
+        <img src="images/gallery3.jpg" alt="Sunrise" />
+        <img src="images/gallery4.jpg" alt="Livestock" />
+        <img src="images/gallery5.jpg" alt="Produce" />
+        <img src="images/gallery6.jpg" alt="Pasture" />
+      </div>
+    </div>
+  </section>
+
+  <!-- School Visits (Molo) -->
+  <section id="visits" class="section focus">
+    <div class="container">
+      <h2 data-i18n="visits_title">School Visits — Molo Agri-Experience</h2>
+      <p class="lead" data-i18n="visits_copy">
+        We welcome local high schools and agri clubs in Molo for guided, hands-on farm tours.
+      </p>
+
+      <div class="grid feature-list">
+        <div class="feature">
+          <h4>🌽 <span data-i18n="visit_crop_title">Crop Production</span></h4>
+          <p data-i18n="visit_crop_copy">Potatoes, maize, vegetables, soil health & rotation.</p>
+        </div>
+        <div class="feature">
+          <h4>🐄 <span data-i18n="visit_dairy_title">Dairy & Poultry</span></h4>
+          <p data-i18n="visit_dairy_copy">Milking, hygiene, poultry housing & feeding.</p>
+        </div>
+        <div class="feature">
+          <h4>🌍 <span data-i18n="visit_sustain_title">Sustainability</span></h4>
+          <p data-i18n="visit_sustain_copy">Composting, water conservation, agroforestry.</p>
+        </div>
+        <div class="feature">
+          <h4>💼 <span data-i18n="visit_agribiz_title">Agri-Business</span></h4>
+          <p data-i18n="visit_agribiz_copy">Value chains, branding, and farm careers.</p>
+        </div>
+      </div>
+
+      <a href="#contact" class="btn primary" data-i18n="visits_cta">Book a School Tour</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 data-i18n="contact_title">Contact Us</h2>
+      <p class="lead" data-i18n="contact_copy">Questions, bookings, or partnerships? Send us a message.</p>
+
+      <form id="contactForm" novalidate>
+        <div class="form-grid">
+          <label>
+            <span data-i18n="form_name">Name</span>
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            <span data-i18n="form_email">Email</span>
+            <input type="email" name="email" required />
+          </label>
+          <label class="full">
+            <span data-i18n="form_message">Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+        </div>
+        <button class="btn" type="submit" data-i18n="form_send">Send</button>
+      </form>
+
+      <div class="map-wrap">
+        <!-- Replace with your exact location if you want -->
+        <iframe
+          title="Map of Molo, Nakuru"
+          src="https://maps.google.com/maps?q=Molo%2C%20Nakuru%20County&t=&z=12&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
 
   <footer class="site-footer">
-    <p>© Your Farm — Made with care.</p>
+    <div class="container">
+      <p>© <span id="year"></span> My Farm — Molo, Nakuru</p>
+    </div>
   </footer>
 
-<script src="mainjs.js"></script>
-<script src="sounds.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
