@@ -74,7 +74,7 @@ img{max-width:100%; display:block}
 }
 .hero .hero-media{
   position:absolute; inset:0;
-  background:url("images/hero.jpg") center/cover no-repeat fixed;
+  background:url("chicken.jpg") center/cover no-repeat fixed;
   filter:contrast(1.05) saturate(1.05);
 }
 .hero .overlay{
